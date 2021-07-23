@@ -1,0 +1,72 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ChannelAdvisor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EMGExtractor_OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WynitBasicData_OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WynitBasicData_SupplierCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Wynit</Value>
+    </Setting>
+    <Setting Name="WynitBasicData_WarehouseLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Wynit</Value>
+    </Setting>
+    <Setting Name="WynitBasicData_DCCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Wynit</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_AuctionTitleLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">55</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_CAStoreTitleLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_ImageURLs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://s253.photobucket.com/albums/hh64/bargainsdelivered/PicnicTime/</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_SellectCostAddition" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4.50</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_SupplierCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Picnic Time</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_WarehouseLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Picnic Time</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_DCCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Picnic Time</Value>
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_FilePrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PicnicTimeExtractor_OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SunpentownExtractor_OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SunpentownExtractor_AuctionTitleLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">55</Value>
+    </Setting>
+    <Setting Name="SunpentownExtractor_CAStoreTitleLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="SunpentownExtractor_ImageURLs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://i253.photobucket.com/albums/hh64/bargainsdelivered/Sunpentown/</Value>
+    </Setting>
+    <Setting Name="SunpentownExtractor_SupplierCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SPT</Value>
+    </Setting>
+    <Setting Name="SunpentownExtractor_WarehouseLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SPT</Value>
+    </Setting>
+    <Setting Name="SunpentownExtractor_DCCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SPT</Value>
+    </Setting>
+    <Setting Name="SunpentownExtractor_FilePrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

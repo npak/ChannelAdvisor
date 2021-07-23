@@ -1,0 +1,39 @@
+2020-09-11 00:24:02,458 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-09-11 00:24:02,471 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-09-11 00:44:18,890 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-09-11 00:44:18,905 [9] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 22:14:23,751 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 22:14:23,762 [9] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 22:36:58,295 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 22:36:58,314 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 22:39:51,711 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 22:39:51,729 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 22:50:39,193 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 22:50:39,207 [9] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 23:08:04,500 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 23:08:04,513 [9] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 23:12:53,650 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 23:12:53,669 [9] INFO  Default .NET Version:4.0.30319.42000
+2020-11-12 23:14:43,482 [8] INFO  Default Starting app. Version:1.0.0.0
+2020-11-12 23:14:43,499 [8] INFO  Default .NET Version:4.0.30319.42000
+2020-11-13 00:04:45,249 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-13 00:04:45,267 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-13 00:06:09,192 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-13 00:06:09,210 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-13 00:08:42,806 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-13 00:08:42,819 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-13 00:12:45,500 [8] INFO  Default Starting app. Version:1.0.0.0
+2020-11-13 00:12:45,512 [8] INFO  Default .NET Version:4.0.30319.42000
+2020-11-13 00:15:15,513 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-11-13 00:15:15,529 [9] INFO  Default .NET Version:4.0.30319.42000
+2020-11-13 00:20:07,754 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-13 00:20:07,779 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-14 12:17:52,824 [8] INFO  Default Starting app. Version:1.0.0.0
+2020-11-14 12:17:52,854 [8] INFO  Default .NET Version:4.0.30319.42000
+2020-11-14 12:28:58,083 [10] INFO  Default Starting app. Version:1.0.0.0
+2020-11-14 12:28:58,109 [10] INFO  Default .NET Version:4.0.30319.42000
+2020-11-14 12:36:30,753 [9] INFO  Default Starting app. Version:1.0.0.0
+2020-11-14 12:36:30,770 [9] INFO  Default .NET Version:4.0.30319.42000
+2021-03-15 20:51:17,377 [10] INFO  Default Starting app. Version:1.0.0.0
+2021-03-15 20:51:17,461 [10] INFO  Default .NET Version:4.0.30319.42000
+2021-03-15 21:32:14,106 [10] INFO  Default Normal termination of app

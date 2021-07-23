@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ChannelAdvisor" Class="ChannelAdvisorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DBSERVER\SQLEXPRESS2008;Initial Catalog=ChannelAdvisor;Persist Security Info=True;User ID=sa" SettingsObjectName="ChannelAdvisor.Properties.Settings" SettingsPropertyName="ChannelAdvisorConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Vendors" Member="Vendors">
+    <Type Name="Vendor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Vendor" Member="Vendor1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDynamic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Folder" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FileArchive" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="SetOutOfStockIfNotPresented" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SKUPrefix" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="OutOfStockThreshold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OutOfStockQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Vendor_SpecifiedSKUs" Member="SpecifiedSKUs" ThisKey="ID" OtherKey="VendorId" Type="SpecifiedSKUs" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Profiles" Member="Profiles">
+    <Type Name="Profile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Profile" Member="Profile1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileAPIKey" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SpecifiedSKUs" Member="SpecifiedSKUs">
+    <Type Name="SpecifiedSKUs">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SKU" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vendor_SpecifiedSKUs" Member="Vendor" ThisKey="VendorId" OtherKey="ID" Type="Vendor" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

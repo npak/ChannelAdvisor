@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelAdvisor", "WindowsApp\ChannelAdvisor.csproj", "{79CC2639-4CE5-41B2-9138-6EAE66F38B39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAService", "CAService\CAService.csproj", "{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CALogic", "CALogic\CALogic.csproj", "{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMGOrderService", "EMGOrderService\EMGOrderService.csproj", "{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{AB6B66C5-9BE1-422D-8266-105639B1FB40}"
+	ProjectSection(SolutionItems) = preProject
+		..\Libs\FileHelpers.dll = ..\Libs\FileHelpers.dll
+		..\Libs\log4net.dll = ..\Libs\log4net.dll
+		..\Libs\SgmlReaderDll.dll = ..\Libs\SgmlReaderDll.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79CC2639-4CE5-41B2-9138-6EAE66F38B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CC2639-4CE5-41B2-9138-6EAE66F38B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CC2639-4CE5-41B2-9138-6EAE66F38B39}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79CC2639-4CE5-41B2-9138-6EAE66F38B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CC2639-4CE5-41B2-9138-6EAE66F38B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CC2639-4CE5-41B2-9138-6EAE66F38B39}.Release|x86.ActiveCfg = Release|Any CPU
+		{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA09B55-A689-4EE9-BD68-21BBECEFB11D}.Release|x86.ActiveCfg = Release|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Debug|x86.Build.0 = Debug|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Release|x86.ActiveCfg = Release|x86
+		{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}.Release|x86.Build.0 = Release|x86
+		{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1F54DD-9434-4ECF-A19C-961C5164B2A4}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

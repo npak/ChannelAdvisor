@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://api.channeladvisor.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://api.channeladvisor.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://api.channeladvisor.com/webservices/">
+      <s:element name="GetSearchAnalysisStats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountID" nillable="true" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDateUTC" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDateUTC" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSearchAnalysisStatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSearchAnalysisStatsResult" type="tns:APIResultOfStoreSearchAnalysisResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="APIResultOfStoreSearchAnalysisResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ResultStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultData" type="tns:StoreSearchAnalysisResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResultStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Failure" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="StoreSearchAnalysisResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalSearches" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhraseOccurrenceList" type="tns:ArrayOfSearchPhraseOccurrence" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermOccurrenceList" type="tns:ArrayOfSearchTermOccurrence" />
+          <s:element minOccurs="0" maxOccurs="1" name="SkuOccurrenceList" type="tns:ArrayOfSearchSkuOccurrence" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSearchPhraseOccurrence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchPhraseOccurrence" nillable="true" type="tns:SearchPhraseOccurrence" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchPhraseOccurrence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Phrase" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSearchTermOccurrence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchTermOccurrence" nillable="true" type="tns:SearchTermOccurrence" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchTermOccurrence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSearchSkuOccurrence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchSkuOccurrence" nillable="true" type="tns:SearchSkuOccurrence" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchSkuOccurrence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="APICredentials" type="tns:APICredentials" />
+      <s:complexType name="APICredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeveloperKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingResult" type="tns:APIResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="APIResultOfString">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ResultStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSearchAnalysisStatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSearchAnalysisStats" />
+  </wsdl:message>
+  <wsdl:message name="GetSearchAnalysisStatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSearchAnalysisStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSearchAnalysisStatsAPICredentials">
+    <wsdl:part name="APICredentials" element="tns:APICredentials" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingAPICredentials">
+    <wsdl:part name="APICredentials" element="tns:APICredentials" />
+  </wsdl:message>
+  <wsdl:portType name="StoreServiceSoap">
+    <wsdl:operation name="GetSearchAnalysisStats">
+      <wsdl:input message="tns:GetSearchAnalysisStatsSoapIn" />
+      <wsdl:output message="tns:GetSearchAnalysisStatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StoreServiceSoap" type="tns:StoreServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSearchAnalysisStats">
+      <soap:operation soapAction="http://api.channeladvisor.com/webservices/GetSearchAnalysisStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSearchAnalysisStatsAPICredentials" part="APICredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://api.channeladvisor.com/webservices/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PingAPICredentials" part="APICredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StoreServiceSoap12" type="tns:StoreServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSearchAnalysisStats">
+      <soap12:operation soapAction="http://api.channeladvisor.com/webservices/GetSearchAnalysisStats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSearchAnalysisStatsAPICredentials" part="APICredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://api.channeladvisor.com/webservices/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PingAPICredentials" part="APICredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StoreService">
+    <wsdl:port name="StoreServiceSoap" binding="tns:StoreServiceSoap">
+      <soap:address location="https://api.channeladvisor.com/ChannelAdvisorAPI/v2/StoreService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StoreServiceSoap12" binding="tns:StoreServiceSoap12">
+      <soap12:address location="https://api.channeladvisor.com/ChannelAdvisorAPI/v2/StoreService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ChannelAdvisor">
+  <DataContextMoniker Name="/ChannelAdvisorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bd4934cf-b183-44f6-9e91-f134f578a841" absoluteBounds="3.125, 1.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ChannelAdvisorDataContext/Vendor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70b45776-31de-45f5-8da3-b9b58cc328e1" absoluteBounds="3.1399999999999997, 2.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="257ce517-11e9-42b8-86dc-583149238ce1" absoluteBounds="6.5, 2, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ChannelAdvisorDataContext/Profile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7a4dbd8-446a-4d44-b7b2-3e492a0629d7" absoluteBounds="6.515, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75f03713-1482-4788-8d5c-9b68ef533bfd" absoluteBounds="6.25, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ChannelAdvisorDataContext/SpecifiedSKUs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee1c85bf-4497-4de3-a55a-d24c4e9ecb0f" absoluteBounds="6.265, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 4.02809895833333); (6.34375 : 4.02809895833333); (6.34375 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ChannelAdvisorDataContext/Vendor/Vendor_SpecifiedSKUs" />
+      <nodes>
+        <classShapeMoniker Id="bd4934cf-b183-44f6-9e91-f134f578a841" />
+        <classShapeMoniker Id="75f03713-1482-4788-8d5c-9b68ef533bfd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

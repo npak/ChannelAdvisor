@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A55FC88-FED7-4BAA-9A2E-B2A8247B994D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChannelAdvisor</RootNamespace>
+    <AssemblyName>CALogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FileHelpers">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers.DataLink">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.DataLink.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers.ExcelStorage">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.ExcelStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\Interop.Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MWSClientCsRuntime-1.0, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\output\MWSClientCsRuntime-1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SgmlReaderDll">
+      <HintPath>..\packages\SgmlReader.1.8.11\lib\4.0\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmazonMWS\MarketplaceWebServiceProducts.cs" />
+    <Compile Include="AmazonMWS\MarketplaceWebServiceProductsClient.cs" />
+    <Compile Include="AmazonMWS\MarketplaceWebServiceProductsConfig.cs" />
+    <Compile Include="AmazonMWS\MarketplaceWebServiceProductsException.cs" />
+    <Compile Include="AmazonMWS\MarketplaceWebServiceProductsSample.cs" />
+    <Compile Include="BusinessObjects.cs" />
+    <Compile Include="BusinessObjects\MorrisChangesExtractorSettings.cs" />
+    <Compile Include="BusinessObjects\MorrisNightlyExtractorSettings.cs" />
+    <Compile Include="BusinessObjects\StockItem.cs" />
+    <Compile Include="BusinessObjects\MorrisCompleteExtractorSettings.cs" />
+    <Compile Include="BusinessObjects\MorrisExtractorSettings.cs" />
+    <Compile Include="BusinessObjects\CWRExtractorSettings.cs" />
+    <Compile Include="BusinessObjects\EMGExtractorSettings.cs" />
+    <Compile Include="BusinessObjects\Inventory.cs" />
+    <Compile Include="BusinessObjects\SearchAnalysisResult.cs" />
+    <Compile Include="BusinessObjects\SearchOccurrence.cs" />
+    <Compile Include="BusinessObjects\Vendor.cs" />
+    <Compile Include="CA\CAUtils.cs" />
+    <Compile Include="CA\StoreService.cs" />
+    <Compile Include="Collections\PropertyComparer.cs" />
+    <Compile Include="Collections\SortableBindingList.cs" />
+    <Compile Include="DAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\ChannelAdvisor.cs">
+      <DependentUpon>ChannelAdvisor.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ChannelAdvisor.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChannelAdvisor.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EMGOrderService\EMGOrder.cs" />
+    <Compile Include="EMGOrderService\FileOrder.cs" />
+    <Compile Include="Enums\CAServiceType.cs" />
+    <Compile Include="Enums\ServiceType.cs" />
+    <Compile Include="Enums\VendorName.cs" />
+    <Compile Include="Enums\VendorType.cs" />
+    <Compile Include="Extractors\MorrisChangesExtractor.cs" />
+    <Compile Include="Extractors\MorrisNightlyExtractor.cs" />
+    <Compile Include="Extractors\MorrisCompleteExtractor.cs" />
+    <Compile Include="Extractors\MorrisExtractor.cs" />
+    <Compile Include="Extractors\CWRExtractor.cs" />
+    <Compile Include="Extractors\EMGExtractor.cs" />
+    <Compile Include="ImportExport\CSVExportRow.cs" />
+    <Compile Include="ImportExport\MorrisExportRow.cs" />
+    <Compile Include="ImportExport\MorrisExporter.cs" />
+    <Compile Include="ImportExport\CWRExporter.cs" />
+    <Compile Include="ImportExport\CWRExportRow.cs" />
+    <Compile Include="ImportExport\CWRExportShippingRow.cs" />
+    <Compile Include="ImportExport\EMGExporter.cs" />
+    <Compile Include="ImportExport\EMGExportShippingRow.cs" />
+    <Compile Include="ImportExport\InventoryExportRow.cs" />
+    <Compile Include="ImportExport\PicnicTimeExporter.cs" />
+    <Compile Include="ImportExport\PicnicTimePricingExportRow.cs" />
+    <Compile Include="ImportExport\PicnicTimeShippingExportRow.cs" />
+    <Compile Include="ImportExport\ShippingSpreadsheetExportRow.cs" />
+    <Compile Include="ImportExport\SunpentownExporter.cs" />
+    <Compile Include="ImportExport\WynitExporter.cs" />
+    <Compile Include="Interfaces\IVendorService.cs" />
+    <Compile Include="ImportExport\DuplicateSKU.cs" />
+    <Compile Include="ImportExport\EMGExportRow.cs" />
+    <Compile Include="InventoryCache.cs" />
+    <Compile Include="MWSModel\ASINIdentifier.cs" />
+    <Compile Include="MWSModel\ASINListType.cs" />
+    <Compile Include="MWSModel\ASINOfferDetail.cs" />
+    <Compile Include="MWSModel\ASINOfferDetailList.cs" />
+    <Compile Include="MWSModel\AttributeSetList.cs" />
+    <Compile Include="MWSModel\BuyBoxEligibleOffers.cs" />
+    <Compile Include="MWSModel\BuyBoxPrices.cs" />
+    <Compile Include="MWSModel\BuyBoxPriceType.cs" />
+    <Compile Include="MWSModel\Categories.cs" />
+    <Compile Include="MWSModel\CompetitivePriceList.cs" />
+    <Compile Include="MWSModel\CompetitivePriceType.cs" />
+    <Compile Include="MWSModel\CompetitivePricingType.cs" />
+    <Compile Include="MWSModel\DetailedShippingTimeType.cs" />
+    <Compile Include="MWSModel\Error.cs" />
+    <Compile Include="MWSModel\ErrorDetail.cs" />
+    <Compile Include="MWSModel\FeeDetail.cs" />
+    <Compile Include="MWSModel\FeeDetailList.cs" />
+    <Compile Include="MWSModel\FeesEstimate.cs" />
+    <Compile Include="MWSModel\FeesEstimateIdentifier.cs" />
+    <Compile Include="MWSModel\FeesEstimateRequest.cs" />
+    <Compile Include="MWSModel\FeesEstimateRequestList.cs" />
+    <Compile Include="MWSModel\FeesEstimateResult.cs" />
+    <Compile Include="MWSModel\FeesEstimateResultList.cs" />
+    <Compile Include="MWSModel\GetCompetitivePricingForASINRequest.cs" />
+    <Compile Include="MWSModel\GetCompetitivePricingForASINResponse.cs" />
+    <Compile Include="MWSModel\GetCompetitivePricingForASINResult.cs" />
+    <Compile Include="MWSModel\GetCompetitivePricingForSKURequest.cs" />
+    <Compile Include="MWSModel\GetCompetitivePricingForSKUResponse.cs" />
+    <Compile Include="MWSModel\GetCompetitivePricingForSKUResult.cs" />
+    <Compile Include="MWSModel\GetLowestOfferListingsForASINRequest.cs" />
+    <Compile Include="MWSModel\GetLowestOfferListingsForASINResponse.cs" />
+    <Compile Include="MWSModel\GetLowestOfferListingsForASINResult.cs" />
+    <Compile Include="MWSModel\GetLowestOfferListingsForSKURequest.cs" />
+    <Compile Include="MWSModel\GetLowestOfferListingsForSKUResponse.cs" />
+    <Compile Include="MWSModel\GetLowestOfferListingsForSKUResult.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersAsinIdentifier.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersForASINRequest.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersForASINResponse.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersForASINResult.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersForSKURequest.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersForSKUResponse.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersForSKUResult.cs" />
+    <Compile Include="MWSModel\GetLowestPricedOffersSkuIdentifier.cs" />
+    <Compile Include="MWSModel\GetMatchingProductForIdRequest.cs" />
+    <Compile Include="MWSModel\GetMatchingProductForIdResponse.cs" />
+    <Compile Include="MWSModel\GetMatchingProductForIdResult.cs" />
+    <Compile Include="MWSModel\GetMatchingProductRequest.cs" />
+    <Compile Include="MWSModel\GetMatchingProductResponse.cs" />
+    <Compile Include="MWSModel\GetMatchingProductResult.cs" />
+    <Compile Include="MWSModel\GetMyFeesEstimateRequest.cs" />
+    <Compile Include="MWSModel\GetMyFeesEstimateResponse.cs" />
+    <Compile Include="MWSModel\GetMyFeesEstimateResult.cs" />
+    <Compile Include="MWSModel\GetMyPriceForASINRequest.cs" />
+    <Compile Include="MWSModel\GetMyPriceForASINResponse.cs" />
+    <Compile Include="MWSModel\GetMyPriceForASINResult.cs" />
+    <Compile Include="MWSModel\GetMyPriceForSKURequest.cs" />
+    <Compile Include="MWSModel\GetMyPriceForSKUResponse.cs" />
+    <Compile Include="MWSModel\GetMyPriceForSKUResult.cs" />
+    <Compile Include="MWSModel\GetProductCategoriesForASINRequest.cs" />
+    <Compile Include="MWSModel\GetProductCategoriesForASINResponse.cs" />
+    <Compile Include="MWSModel\GetProductCategoriesForASINResult.cs" />
+    <Compile Include="MWSModel\GetProductCategoriesForSKURequest.cs" />
+    <Compile Include="MWSModel\GetProductCategoriesForSKUResponse.cs" />
+    <Compile Include="MWSModel\GetProductCategoriesForSKUResult.cs" />
+    <Compile Include="MWSModel\GetServiceStatusRequest.cs" />
+    <Compile Include="MWSModel\GetServiceStatusResponse.cs" />
+    <Compile Include="MWSModel\GetServiceStatusResult.cs" />
+    <Compile Include="MWSModel\IdentifierType.cs" />
+    <Compile Include="MWSModel\IdListType.cs" />
+    <Compile Include="MWSModel\IMWSResponse.cs" />
+    <Compile Include="MWSModel\ListMatchingProductsRequest.cs" />
+    <Compile Include="MWSModel\ListMatchingProductsResponse.cs" />
+    <Compile Include="MWSModel\ListMatchingProductsResult.cs" />
+    <Compile Include="MWSModel\LowestOfferListingList.cs" />
+    <Compile Include="MWSModel\LowestOfferListingType.cs" />
+    <Compile Include="MWSModel\LowestPrices.cs" />
+    <Compile Include="MWSModel\LowestPriceType.cs" />
+    <Compile Include="MWSModel\Message.cs" />
+    <Compile Include="MWSModel\MessageList.cs" />
+    <Compile Include="MWSModel\MoneyType.cs" />
+    <Compile Include="MWSModel\NumberOfOfferListingsList.cs" />
+    <Compile Include="MWSModel\NumberOfOffers.cs" />
+    <Compile Include="MWSModel\OfferCountType.cs" />
+    <Compile Include="MWSModel\OfferListingCountType.cs" />
+    <Compile Include="MWSModel\OffersList.cs" />
+    <Compile Include="MWSModel\OfferType.cs" />
+    <Compile Include="MWSModel\Points.cs" />
+    <Compile Include="MWSModel\PriceToEstimateFees.cs" />
+    <Compile Include="MWSModel\PriceType.cs" />
+    <Compile Include="MWSModel\Product.cs" />
+    <Compile Include="MWSModel\ProductList.cs" />
+    <Compile Include="MWSModel\ProductsUtil.cs" />
+    <Compile Include="MWSModel\QualifiersType.cs" />
+    <Compile Include="MWSModel\RelationshipList.cs" />
+    <Compile Include="MWSModel\ResponseHeaderMetadata.cs" />
+    <Compile Include="MWSModel\ResponseMetadata.cs" />
+    <Compile Include="MWSModel\SalesRankList.cs" />
+    <Compile Include="MWSModel\SalesRankType.cs" />
+    <Compile Include="MWSModel\SellerFeedbackType.cs" />
+    <Compile Include="MWSModel\SellerSKUIdentifier.cs" />
+    <Compile Include="MWSModel\SellerSKUListType.cs" />
+    <Compile Include="MWSModel\ServiceStatusEnum.cs" />
+    <Compile Include="MWSModel\ShippingTimeType.cs" />
+    <Compile Include="MWSModel\ShipsFromType.cs" />
+    <Compile Include="MWSModel\SKUOfferDetail.cs" />
+    <Compile Include="MWSModel\SKUOfferDetailList.cs" />
+    <Compile Include="MWSModel\Summary.cs" />
+    <Compile Include="Objects\GenericPrice.cs" />
+    <Compile Include="Objects\MwsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objects\ShipStationModels.cs" />
+    <Compile Include="Objects\OrderStatus.cs" />
+    <Compile Include="Objects\Benchmark.cs" />
+    <Compile Include="Objects\PetGear.cs" />
+    <Compile Include="Objects\PacificCycle.cs" />
+    <Compile Include="ImportExport\PicnicTimeExportRow.cs" />
+    <Compile Include="ImportExport\ShippingSpreadsheetImportRow.cs" />
+    <Compile Include="ImportExport\SunpentownExportRow.cs" />
+    <Compile Include="ImportExport\WynitExportRow.cs" />
+    <Compile Include="LinnworksThrottler.cs" />
+    <Compile Include="Utility\EmailManager.cs" />
+    <Compile Include="Utility\UpdateToFTP.cs" />
+    <Compile Include="Utility\CAUtil.cs" />
+    <Compile Include="Utility\ExcelUtils.cs" />
+    <Compile Include="Utility\FileAndDirectoryUtils.cs" />
+    <Compile Include="Utility\StringUtils.cs" />
+    <Compile Include="Utility\WaitDialogWithWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\WaitDialogWithWork.Designer.cs">
+      <DependentUpon>WaitDialogWithWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendorServices\AZService.cs" />
+    <Compile Include="VendorServices\AmazonService.cs" />
+    <Compile Include="VendorServices\MorrisWeeklySummaryService.cs" />
+    <Compile Include="VendorServices\MorrisXMLInguryService.cs" />
+    <Compile Include="VendorServices\MorrisXMLCreatorService.cs" />
+    <Compile Include="VendorServices\NearlyNaturalService.cs" />
+    <Compile Include="VendorServices\MotengService.cs" />
+    <Compile Include="VendorServices\PetraOrderReformatService.cs" />
+    <Compile Include="VendorServices\PetraOrderService.cs" />
+    <Compile Include="VendorServices\PetraService.cs" />
+    <Compile Include="VendorServices\TWHService.cs" />
+    <Compile Include="VendorServices\SeawideService.cs" />
+    <Compile Include="VendorServices\VikingService.cs" />
+    <Compile Include="VendorServices\GreenSupplyService.cs" />
+    <Compile Include="VendorServices\MorrisDailySummaryService.cs" />
+    <Compile Include="VendorServices\EMGService.cs" />
+    <Compile Include="VendorServices\MorrisCompleteService.cs" />
+    <Compile Include="VendorServices\MorrisChangesService.cs" />
+    <Compile Include="VendorServices\MorrisNightlyService.cs" />
+    <Compile Include="VendorServices\MorrisService.cs" />
+    <Compile Include="VendorServices\CWRService.cs" />
+    <Compile Include="VendorServices\BenchmarkService .cs" />
+    <Compile Include="VendorServices\PetGearService.cs" />
+    <Compile Include="VendorServices\PetraServiceNew.cs" />
+    <Compile Include="VendorServices\PicnicTimeService.cs" />
+    <Compile Include="VendorServices\RocklineService.cs" />
+    <Compile Include="VendorServices\DressUpAmericaService.cs" />
+    <Compile Include="FTP.cs" />
+    <Compile Include="InventoryUpdateService.cs" />
+    <Compile Include="PostSubmitter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TrustAllCertificatePolicy.cs" />
+    <Compile Include="UpdateCA.cs" />
+    <Compile Include="VendorServices\GenericPriceService.cs" />
+    <Compile Include="VendorServices\HaierService.cs" />
+    <Compile Include="VendorServices\KwikTekService.cs" />
+    <Compile Include="VendorServices\LinnworksService.cs" />
+    <Compile Include="VendorServices\OceanStarService.cs" />
+    <Compile Include="VendorServices\PacificCycleService.cs" />
+    <Compile Include="VendorServices\PicnicTimeServiceOld.cs" />
+    <Compile Include="VendorServices\RJTService.cs" />
+    <Compile Include="VendorServices\SumdexService.cs" />
+    <Compile Include="VendorServices\VendorServiceFactory.cs" />
+    <Compile Include="VendorServices\WynitService.cs" />
+    <Compile Include="Web References\CA.InventoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CAStoreService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://api.channeladvisor.com/ChannelAdvisorAPI/v1/InventoryService.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CA.InventoryService\</RelPath>
+      <UpdateFromURL>https://api.channeladvisor.com/ChannelAdvisorAPI/v1/InventoryService.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CALogic_CA_InventoryService_InventoryService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://api.channeladvisor.com/ChannelAdvisorAPI/v2/StoreService.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CAStoreService\</RelPath>
+      <UpdateFromURL>https://api.channeladvisor.com/ChannelAdvisorAPI/v2/StoreService.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CALogic_CAStoreService_StoreService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VendorServices\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\ChannelAdvisor.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ChannelAdvisor.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfClassificationAttributeInfo1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfClassificationConfigurationInformation1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfDoesSkuExistResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfImageInfoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfInventoryItemResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfInventoryQuantityResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfShippingRateInfo1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfString1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfSynchInventoryItemResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfArrayOfUpdateInventoryItemResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfBoolean1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfInt321.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfQuantityInfoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfStoreInfo1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfString1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\APIResultOfVariationInfo1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CA.InventoryService\InventoryService.wsdl" />
+    <None Include="Web References\CA.InventoryService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CAStoreService\APIResultOfStoreSearchAnalysisResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CAStoreService\APIResultOfString.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CAStoreService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CAStoreService\StoreService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\ChannelAdvisor.dbml.layout">
+      <DependentUpon>ChannelAdvisor.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Utility\WaitDialogWithWork.resx">
+      <DependentUpon>WaitDialogWithWork.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

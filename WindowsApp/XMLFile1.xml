@@ -1,0 +1,83 @@
+﻿<?xml version="1.0"?>
+<GetMatchingProductForIdResponse xmlns="http://mws.amazonservices.com/schema/Products/2011-10-01">
+  <GetMatchingProductForIdResult Id="794552010234" IdType="UPC" status="Success">
+    <Products xmlns="http://mws.amazonservices.com/schema/Products/2011-10-01" xmlns:ns2="http://mws.amazonservices.com/schema/Products/2011-10-01/default.xsd">
+      <Product>
+        <Identifiers>
+          <MarketplaceASIN>
+            <MarketplaceId>ATVPDKIKX0DER</MarketplaceId>
+            <ASIN>B000FVB8CI</ASIN>
+          </MarketplaceASIN>
+        </Identifiers>
+        <AttributeSets>
+          <ns2:ItemAttributes xml:lang="en-US">
+            <ns2:Binding>Lawn  Patio</ns2:Binding>
+            <ns2:Brand>Anji Mountain</ns2:Brand>
+            <ns2:Color>Natural</ns2:Color>
+            <ns2:Department>Unisex</ns2:Department>
+            <ns2:ItemDimensions>
+              <ns2:Height Units="inches">2.00</ns2:Height>
+              <ns2:Length Units="inches">3.00</ns2:Length>
+              <ns2:Width Units="inches">0.25</ns2:Width>
+            </ns2:ItemDimensions>
+            <ns2:IsAutographed>false</ns2:IsAutographed>
+            <ns2:IsMemorabilia>false</ns2:IsMemorabilia>
+            <ns2:Label>Anji Mountain</ns2:Label>
+            <ns2:ListPrice>
+              <ns2:Amount>39.95</ns2:Amount>
+              <ns2:CurrencyCode>USD</ns2:CurrencyCode>
+            </ns2:ListPrice>
+            <ns2:Manufacturer>Anji Mountain</ns2:Manufacturer>
+            <ns2:MaterialType>bamboo</ns2:MaterialType>
+            <ns2:Model>AMB0010-0023</ns2:Model>
+            <ns2:NumberOfItems>1</ns2:NumberOfItems>
+            <ns2:PackageDimensions>
+              <ns2:Height Units="inches">2.10</ns2:Height>
+              <ns2:Length Units="inches">25.80</ns2:Length>
+              <ns2:Width Units="inches">2.60</ns2:Width>
+              <ns2:Weight Units="pounds">0.95</ns2:Weight>
+            </ns2:PackageDimensions>
+            <ns2:PackageQuantity>1</ns2:PackageQuantity>
+            <ns2:PartNumber>AMB0010-0023</ns2:PartNumber>
+            <ns2:ProductGroup>Furniture</ns2:ProductGroup>
+            <ns2:ProductTypeName>HOME_FURNITURE_AND_DECOR</ns2:ProductTypeName>
+            <ns2:Publisher>Anji Mountain</ns2:Publisher>
+            <ns2:ReleaseDate>2006-05-25</ns2:ReleaseDate>
+            <ns2:Size>2 x 3-Feet</ns2:Size>
+            <ns2:SmallImage>
+              <ns2:URL>http://ecx.images-amazon.com/images/I/512PjRoOG2L._SL75_.jpg</ns2:URL>
+              <ns2:Height Units="pixels">46</ns2:Height>
+              <ns2:Width Units="pixels">75</ns2:Width>
+            </ns2:SmallImage>
+            <ns2:Studio>Anji Mountain</ns2:Studio>
+            <ns2:Title>Anji Mountain 2-Foot-by-3-Foot Natural Fiber Rug, Villager Natural</ns2:Title>
+            <ns2:Warranty>30 day limited.</ns2:Warranty>
+          </ns2:ItemAttributes>
+        </AttributeSets>
+        <Relationships>
+          <VariationParent>
+            <Identifiers>
+              <MarketplaceASIN>
+                <MarketplaceId>ATVPDKIKX0DER</MarketplaceId>
+                <ASIN>B06XVGYQHH</ASIN>
+              </MarketplaceASIN>
+            </Identifiers>
+          </VariationParent>
+        </Relationships>
+        <SalesRankings>
+          <SalesRank>
+            <ProductCategoryId>home_garden_display_on_website</ProductCategoryId>
+            <Rank>3560502</Rank>
+          </SalesRank>
+          <SalesRank>
+            <ProductCategoryId>684541011</ProductCategoryId>
+            <Rank>57788</Rank>
+          </SalesRank>
+        </SalesRankings>
+      </Product>
+    </Products>
+  </GetMatchingProductForIdResult>
+  <ResponseMetadata>
+    <RequestId>c8a1fbc7-8178-466e-8250-7b9547d69694</RequestId>
+  </ResponseMetadata>
+</GetMatchingProductForIdResponse>

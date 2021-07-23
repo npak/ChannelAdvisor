@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79CC2639-4CE5-41B2-9138-6EAE66F38B39}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChannelAdvisor</RootNamespace>
+    <AssemblyName>EcommerceUpdater</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FileHelpers">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers.DataLink">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.DataLink.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers.ExcelStorage">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.ExcelStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\Interop.Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\output\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SgmlReaderDll">
+      <HintPath>..\packages\SgmlReader.1.8.11\lib\4.0\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MorrisWeeklySummarySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisWeeklySummarySettings.Designer.cs">
+      <DependentUpon>MorrisWeeklySummarySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TWHSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TWHSettings.Designer.cs">
+      <DependentUpon>TWHSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeawideSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeawideSettings.Designer.cs">
+      <DependentUpon>SeawideSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LWAPISettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LWAPISettings.Designer.cs">
+      <DependentUpon>LWAPISettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LWAPIs.cs" />
+    <Compile Include="Classes\LWAPIService.cs" />
+    <Compile Include="Classes\ShipStationService.cs" />
+    <Compile Include="Classes\ShipStationAPIs.cs" />
+    <Compile Include="Classes\PricingMarkupBL.cs" />
+    <Compile Include="Controls\CADataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CommonVendorSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CommonVendorSettings.Designer.cs">
+      <DependentUpon>CommonVendorSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NullableTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AZSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AZSettings.Designer.cs">
+      <DependentUpon>AZSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AmazonMWSSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmazonMWSSettings.Designer.cs">
+      <DependentUpon>AmazonMWSSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlockedSKUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockedSKUs.Designer.cs">
+      <DependentUpon>BlockedSKUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LinnworksModels.cs" />
+    <Compile Include="MorrisXMLCreatorSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisXMLCreatorSettings.Designer.cs">
+      <DependentUpon>MorrisXMLCreatorSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotengSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotengSettings.Designer.cs">
+      <DependentUpon>MotengSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MWSSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MWSSearch.Designer.cs">
+      <DependentUpon>MWSSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NearlyNaturalSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NearlyNaturalSettings.Designer.cs">
+      <DependentUpon>NearlyNaturalSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PetraOrderReformatSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PetraOrderReformatSettings.Designer.cs">
+      <DependentUpon>PetraOrderReformatSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PetraOrderSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PetraOrderSettings.Designer.cs">
+      <DependentUpon>PetraOrderSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VikingSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VikingSettings.Designer.cs">
+      <DependentUpon>VikingSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GreenSupplySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GreenSupplySettings.Designer.cs">
+      <DependentUpon>GreenSupplySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisDailySummarySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisDailySummarySettings.Designer.cs">
+      <DependentUpon>MorrisDailySummarySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RunShipstation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RunShipstation.designer.cs">
+      <DependentUpon>RunShipstation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shipstation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipstation.designer.cs">
+      <DependentUpon>Shipstation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShipstationSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShipstationSettings.Designer.cs">
+      <DependentUpon>ShipstationSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorrisCompleteExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisCompleteExtractor.Designer.cs">
+      <DependentUpon>MorrisCompleteExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisChangesExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisChangesExtractor.Designer.cs">
+      <DependentUpon>MorrisChangesExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisExtractor.Designer.cs">
+      <DependentUpon>MorrisExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisCompleteSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisCompleteSettings.Designer.cs">
+      <DependentUpon>MorrisCompleteSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisChangesSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisChangesSettings.Designer.cs">
+      <DependentUpon>MorrisChangesSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisNightlyExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisNightlyExtractor.Designer.cs">
+      <DependentUpon>MorrisNightlyExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisNightlySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisNightlySettings.Designer.cs">
+      <DependentUpon>MorrisNightlySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorrisSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorrisSettings.Designer.cs">
+      <DependentUpon>MorrisSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherVendorsFTPOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherVendorsFTPOptions.Designer.cs">
+      <DependentUpon>OtherVendorsFTPOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BenchmarkSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenchmarkSettings.Designer.cs">
+      <DependentUpon>BenchmarkSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PetGearSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PetGearSettings.Designer.cs">
+      <DependentUpon>PetGearSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PetraSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PetraSettings.Designer.cs">
+      <DependentUpon>PetraSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewCache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewCache.Designer.cs">
+      <DependentUpon>PreviewCache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RockLineSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RockLineSettings.Designer.cs">
+      <DependentUpon>RockLineSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanStarSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OceanStarSettings.Designer.cs">
+      <DependentUpon>OceanStarSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWRExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWRExtractor.Designer.cs">
+      <DependentUpon>CWRExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWRSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWRSettings.Designer.cs">
+      <DependentUpon>CWRSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DressUpAmericaSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DressUpAmericaSettings.Designer.cs">
+      <DependentUpon>DressUpAmericaSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicateSKUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuplicateSKUs.Designer.cs">
+      <DependentUpon>DuplicateSKUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicVendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicVendors.Designer.cs">
+      <DependentUpon>DynamicVendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGExtractor.Designer.cs">
+      <DependentUpon>EMGExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGFrequency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGFrequency.Designer.cs">
+      <DependentUpon>EMGFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGOrderStatusLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGOrderStatusLogs.Designer.cs">
+      <DependentUpon>EMGOrderStatusLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGOrderUpdateLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGOrderUpdateLogs.Designer.cs">
+      <DependentUpon>EMGOrderUpdateLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGOrderUpdateSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGOrderUpdateSettings.Designer.cs">
+      <DependentUpon>EMGOrderUpdateSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGPendingOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\EMGPendingOrders.Designer.cs">
+      <DependentUpon>EMGPendingOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\TransportCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGOrderUpdate\TransportCodes.Designer.cs">
+      <DependentUpon>TransportCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMGSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMGSettings.Designer.cs">
+      <DependentUpon>EMGSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frequency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frequency.Designer.cs">
+      <DependentUpon>Frequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HaierSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HaierSettings.Designer.cs">
+      <DependentUpon>HaierSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KwikTekSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KwikTekSettings.Designer.cs">
+      <DependentUpon>KwikTekSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacificCycleInlineToysSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacificCycleInlineToysSettings.Designer.cs">
+      <DependentUpon>PacificCycleInlineToysSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacificCycleSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacificCycleSettings.Designer.cs">
+      <DependentUpon>PacificCycleSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PicnicTimeExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PicnicTimeExtractor.Designer.cs">
+      <DependentUpon>PicnicTimeExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PicnicTimeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PicnicTimeSettings.Designer.cs">
+      <DependentUpon>PicnicTimeSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profiles.Designer.cs">
+      <DependentUpon>Profiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJTSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RJTSettings.Designer.cs">
+      <DependentUpon>RJTSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchStats.Designer.cs">
+      <DependentUpon>SearchStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewAndUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewAndUpdate.Designer.cs">
+      <DependentUpon>PreviewAndUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PricingMarkup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PricingMarkup.Designer.cs">
+      <DependentUpon>PricingMarkup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShipstationSettingServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShipstationSettingServices.Designer.cs">
+      <DependentUpon>ShipstationSettingServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SumdexSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SumdexSettings.Designer.cs">
+      <DependentUpon>SumdexSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SunpentownExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SunpentownExtractor.Designer.cs">
+      <DependentUpon>SunpentownExtractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\EMGOrderStatus.cs" />
+    <Compile Include="Test\EMGOrderUpdater.cs" />
+    <Compile Include="VendorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorEdit.Designer.cs">
+      <DependentUpon>VendorEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendorProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorProfiles.Designer.cs">
+      <DependentUpon>VendorProfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MorrisWeeklySummarySettings.resx">
+      <DependentUpon>MorrisWeeklySummarySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TWHSettings.resx">
+      <DependentUpon>TWHSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeawideSettings.resx">
+      <DependentUpon>SeawideSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LWAPISettings.resx">
+      <DependentUpon>LWAPISettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CommonVendorSettings.resx">
+      <DependentUpon>CommonVendorSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AZSettings.resx">
+      <DependentUpon>AZSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmazonMWSSettings.resx">
+      <DependentUpon>AmazonMWSSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockedSKUs.resx">
+      <DependentUpon>BlockedSKUs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisXMLCreatorSettings.resx">
+      <DependentUpon>MorrisXMLCreatorSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotengSettings.resx">
+      <DependentUpon>MotengSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MWSSearch.resx">
+      <DependentUpon>MWSSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NearlyNaturalSettings.resx">
+      <DependentUpon>NearlyNaturalSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PetraOrderReformatSettings.resx">
+      <DependentUpon>PetraOrderReformatSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PetraOrderSettings.resx">
+      <DependentUpon>PetraOrderSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VikingSettings.resx">
+      <DependentUpon>VikingSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GreenSupplySettings.resx">
+      <DependentUpon>GreenSupplySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisDailySummarySettings.resx">
+      <DependentUpon>MorrisDailySummarySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunShipstation.resx">
+      <DependentUpon>RunShipstation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipstation.resx">
+      <DependentUpon>Shipstation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipstationSettings.resx">
+      <DependentUpon>ShipstationSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisCompleteExtractor.resx">
+      <DependentUpon>MorrisCompleteExtractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisChangesExtractor.resx">
+      <DependentUpon>MorrisChangesExtractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisExtractor.resx">
+      <DependentUpon>MorrisExtractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisCompleteSettings.resx">
+      <DependentUpon>MorrisCompleteSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisChangesSettings.resx">
+      <DependentUpon>MorrisChangesSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisNightlyExtractor.resx">
+      <DependentUpon>MorrisNightlyExtractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisNightlySettings.resx">
+      <DependentUpon>MorrisNightlySettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorrisSettings.resx">
+      <DependentUpon>MorrisSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherVendorsFTPOptions.resx">
+      <DependentUpon>OtherVendorsFTPOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BenchmarkSettings.resx">
+      <DependentUpon>BenchmarkSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PetGearSettings.resx">
+      <DependentUpon>PetGearSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PetraSettings.resx">
+      <DependentUpon>PetraSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewCache.resx">
+      <DependentUpon>PreviewCache.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RockLineSettings.resx">
+      <DependentUpon>RockLineSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanStarSettings.resx">
+      <DependentUpon>OceanStarSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWRExtractor.resx">
+      <DependentUpon>CWRExtractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWRSettings.resx">
+      <DependentUpon>CWRSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DressUpAmericaSettings.resx">
+      <DependentUpon>DressUpAmericaSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuplicateSKUs.resx">
+      <DependentUpon>DuplicateSKUs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicVendors.resx">
+      <DependentUpon>DynamicVendors.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGExtractor.resx">
+      <DependentUpon>EMGExtractor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGOrderUpdate\EMGFrequency.resx">
+      <DependentUpon>EMGFrequency.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGOrderUpdate\EMGOrderStatusLogs.resx">
+      <DependentUpon>EMGOrderStatusLogs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGOrderUpdate\EMGOrderUpdateLogs.resx">
+      <DependentUpon>EMGOrderUpdateLogs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGOrderUpdate\EMGOrderUpdateSettings.resx">
+      <DependentUpon>EMGOrderUpdateSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGOrderUpdate\EMGPendingOrders.resx">
+      <DependentUpon>EMGPendingOrders.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGOrderUpdate\TransportCodes.resx">
+      <DependentUpon>TransportCodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMGSettings.resx">
+      <DependentUpon>EMGSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frequency.resx">
+      <DependentUpon>Frequency.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HaierSettings.resx">
+      <DependentUpon>HaierSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KwikTekSettings.resx">
+      <DependentUpon>KwikTekSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs.resx">
+      <DependentUpon>Logs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacificCycleInlineToysSettings.resx">
+      <DependentUpon>PacificCycleInlineToysSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacificCycleSettings.resx">
+      <DependentUpon>PacificCycleSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PicnicTimeExtractor.resx">
+      <DependentUpon>PicnicTimeExtractor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PicnicTimeSettings.resx">
+      <DependentUpon>PicnicTimeSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewAndUpdate.resx">
+      <DependentUpon>PreviewAndUpdate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PricingMarkup.resx">
+      <DependentUpon>PricingMarkup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profiles.resx">
+      <DependentUpon>Profiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJTSettings.resx">
+      <DependentUpon>RJTSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchStats.resx">
+      <DependentUpon>SearchStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipstationSettingServices.resx">
+      <DependentUpon>ShipstationSettingServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SumdexSettings.resx">
+      <DependentUpon>SumdexSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SunpentownExtractor.resx">
+      <DependentUpon>SunpentownExtractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorEdit.resx">
+      <DependentUpon>VendorEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorProfiles.resx">
+      <DependentUpon>VendorProfiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebServiceURLs.resx">
+      <DependentUpon>WebServiceURLs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WynitBasicData.resx">
+      <DependentUpon>WynitBasicData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WynitSettings.resx">
+      <DependentUpon>WynitSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Classes\Util.cs" />
+    <Compile Include="WebServiceURLs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebServiceURLs.Designer.cs">
+      <DependentUpon>WebServiceURLs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WynitBasicData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WynitBasicData.Designer.cs">
+      <DependentUpon>WynitBasicData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WynitSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WynitSettings.Designer.cs">
+      <DependentUpon>WynitSettings.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="XMLFile1 - Copy.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CALogic\CALogic.csproj">
+      <Project>{9a55fc88-fed7-4baa-9a2e-b2a8247b994d}</Project>
+      <Name>CALogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
